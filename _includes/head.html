@@ -38,11 +38,10 @@
   <meta property="og:image" content="{{ site.url }}{{ page.image }}">
   {% endif %}
 
-  <title>
-    {% if page.id == "home" %}
-      {{ site.title }}
-    {% else %}
-      {{ page.title }} &mdash; {{ site.title }}
-    {% endif %}
-  </title>
+  <!-- 添加 MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
+  <!-- 添加其他 CSS、JS 文件等 -->
+  <!-- ... -->
+
 </head>
