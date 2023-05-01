@@ -10,5 +10,19 @@
 
     {% include link-previews.html wrapperQuerySelector="content" %}
     {% include mermaid_converter.html %}
+
+#添加导航栏到所有页面显示
+  <!-- Navigation bar -->
+  <nav>
+    <ul>
+      {% for item in site.navigation %}
+      <li><a href="#">{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <!-- Page content -->
+  {{ content }}
+
   </body>
 </html>
