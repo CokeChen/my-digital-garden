@@ -1,0 +1,13 @@
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+      mermaidBlocks.forEach(function (block) {
+        var mermaidContent = block.textContent;
+        var mermaidDiv = document.createElement('div');
+        mermaidDiv.classList.add('mermaid');
+        mermaidDiv.textContent = mermaidContent;
+        block.parentNode.replaceWith(mermaidDiv);
+      });
+    });
+  </script>
+  
