@@ -43,3 +43,9 @@ defaults:
       path: "_notes/**/*.md"
     values:
       layout: "note"
+
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter_opts:
+    span:
+      hard_wrap: false
