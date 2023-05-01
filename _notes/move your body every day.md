@@ -13,10 +13,3 @@ F-->可能需要转换
 A-->极限的定义
 ```
 
-<div class="mermaid">
-  graph LR
-    A[Square Rect] -- Link text --> B((Circle))
-    A --> C(Round Rect)
-    B --> D{Rhombus}
-    C --> D
-</div>
