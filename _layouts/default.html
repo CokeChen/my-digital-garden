@@ -1,28 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  {% include head.html %}
+<!DOCTYPE html>   <!--声明文档类型为 HTML5-->
+<html lang="zh-CN">
+  {% include head.html %}   <!--插入head.html文件-->
   <body>
-    <nav>{% include nav.html %}</nav>
+    <nav>
+      {% include nav.html %}  
+    </nav>
     <div class="wrapper">
       <main>{{ content }}</main>
       <footer>{% include footer.html %}</footer>
     </div>
 
     {% include link-previews.html wrapperQuerySelector="content" %}
-    {% include mermaid_converter.html %}
+    {% include mermaid_converter.html %}  <!--将```mermaid转为<div>形式的html-->
 
-#添加导航栏到所有页面显示
-  <!-- Navigation bar -->
-  <nav>
-    <ul>
-      {% for item in site.navigation %}
-      <li><a href="#">{{ item.title }}</a></li>
-      {% endfor %}
-    </ul>
-  </nav>
-
-  <!-- Page content -->
-  {{ content }}
 
   </body>
 </html>

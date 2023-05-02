@@ -89,7 +89,7 @@ a {
     position: relative;
     top: -0.5em;
     font-size: 0.7em;
-    content: "↗";
+    // content: "↗";
     color: #aaaaaa;
   }
   &.internal-link:after,
@@ -143,4 +143,70 @@ code {
 .invalid-link-brackets {
   color: #ccc;
   cursor: help;
+}
+
+// 大纲的css样式
+aside {
+  position: fixed; // 让目录固定在页面侧边
+  top: 0;
+  right: 0; // 根据需要调整位置，例如：left: 0;
+  width: 250px; // 根据需要调整宽度
+  padding: 1rem;
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+#toc {
+  list-style-type: none;
+  padding: 0;
+}
+
+
+#toc a {
+  text-decoration: none !important;
+  color: #333 !important;
+}
+
+#toc li:before {
+  content: none !important;
+}
+
+cssCopy code.toc-level-h1 {
+  margin-left: 0;
+}
+
+.toc-level-h2 {
+  margin-left: 1em;
+}
+
+.toc-level-h3 {
+  margin-left: 2em;
+}
+
+.toc-level-h4 {
+  margin-left: 3em;
+}
+
+.toc-level-h5 {
+  margin-left: 4em;
+}
+
+.toc-level-h6 {
+  margin-left: 5em;
+}
+
+
+
+
+#toc .toggle-icon {
+  cursor: pointer;
+  margin-left: 0.5em;
+}
+
+#toc li.has-children > ul {
+  display: none;
+}
+
+#toc li.has-children.open > ul {
+  display: block;
 }
