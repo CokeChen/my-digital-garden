@@ -156,11 +156,6 @@ aside {
   max-height: 100%;
 }
 
-#toc {
-  list-style-type: none;
-  padding: 0;
-}
-
 
 #toc a {
   text-decoration: none !important;
@@ -202,6 +197,16 @@ cssCopy code.toc-level-h1 {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+//设置目录与正文的边界线
+#toc {
+  list-style-type: none;
+  padding: 0;
+  border-left: 1px solid #ccc;
+  padding-left: 10px; /* 设置内边距，可以根据需要调整 */
+  margin-left: 10px; /* 设置外边距，可以根据需要调整 */
+
+  font-size: 16px; /* 根据需要调整字体大小 */
+}
 
 // 在小屏幕设备上隐藏侧边栏
 @media (max-width: 767px) {
@@ -209,6 +214,7 @@ cssCopy code.toc-level-h1 {
     display: none;
   }
 }
+
 
 
 
