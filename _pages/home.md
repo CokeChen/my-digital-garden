@@ -13,6 +13,8 @@ permalink: /
 ## 目录
 
 - [数学]({{ site.baseurl }}/数学/)
+<!-- 其他导航链接 -->
+
 
 <strong>Recently updated notes</strong>
 

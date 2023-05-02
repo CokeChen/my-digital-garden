@@ -81,9 +81,9 @@ a {
   text-decoration: none;
   border-bottom: 1px solid $color-border;
   color: $color-primary;
-  &:hover {
+  &:hover {                   //鼠标悬停的时候链接的样式
     color: black !important;
-    background: #fffaf1;
+    background: #ffebc6;
   }
   &:after {
     position: relative;
@@ -195,18 +195,20 @@ cssCopy code.toc-level-h1 {
   margin-left: 5em;
 }
 
-
-
-
-#toc .toggle-icon {
-  cursor: pointer;
-  margin-left: 0.5em;
-}
-
-#toc li.has-children > ul {
-  display: none;
-}
-
-#toc li.has-children.open > ul {
+// 截断目录中溢出的文本且以省略号显示
+#toc a {
   display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
+// 在小屏幕设备上隐藏侧边栏
+@media (max-width: 767px) {
+  #toc {
+    display: none;
+  }
+}
+
+
+
