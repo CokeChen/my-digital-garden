@@ -2,6 +2,13 @@
 layout: default
 ---
 
-<content>
-  {{ content }}
-</content>
+<div id="pages-entry-container">
+  <content>
+    {{ content }}
+    <p>道阻且长，行则将至.</p>
+  </content>
+
+  <!-- 加入导图 -->
+  <side>
+    {% include notes_graph.html %} 
+  </side>
