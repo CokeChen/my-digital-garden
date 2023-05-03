@@ -2,6 +2,20 @@
 layout: default
 ---
 
+
+<!-- 加入文件链接 -->
+<nav id="sidebar">
+  相关笔记链接
+  <ul id="directory">
+    {% for note in site.notes %}
+    <li>
+      <a href="{{ note.url | relative_url }}">{{ note.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+
 <article>
   <!-- 显示文章的标题和最后修改时间  -->
   <div> 
@@ -23,6 +37,10 @@ layout: default
       <ul id="toc"></ul>
     </aside>
     
+
+<!-- 添加按钮   -->
+<button id="toggle-sidebar-button" class="toggle-sidebar-button">≡</button>
+
 
 <!-- 原本的页面侧边栏，显示该笔记与其他笔记的链接情况 -->
     <!-- <side style="font-size: 0.9em">
@@ -59,4 +77,6 @@ layout: default
 <!-- 引用大纲的js文件 -->
 <script src="{{ '/assets/js/toc.js' | relative_url }}"></script>
 
+<!-- 引入文件的js文件 -->
+<script src="{{ '/assets/js/file.js' | relative_url }}"></script>
 

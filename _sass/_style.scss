@@ -23,6 +23,49 @@ body {
   }
 }
 
+// 文件链接栏的样式
+#sidebar {
+  width: 20%;
+  min-width: 200px;
+  padding: 1em;
+  border-right: 1px solid #ccc;
+  position: fixed;
+  top: 0;
+  right: 1%;
+  bottom: 1%;
+  height: 90%;
+  overflow-y: auto;
+  background-color: #f0f0f0; /* 更改背景颜色以增加亮度 */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  border-radius: 10px; /* 设置目录栏的边框半径为10px，使其呈现更大的圆角 */
+  display: none;            //一开始隐藏链接栏
+}
+
+
+// 控制侧边栏的按钮
+.toggle-sidebar-button {
+  position: fixed;          /* 将按钮固定在视口中的一个位置，即使页面滚动也不会改变 */
+  top: 8%;                /* 距离视口顶部的距离为20px */
+  right: 25%;              /* 距离视口右侧的距离为20% */
+  background-color: #B2DFDB !important;/* 设置按钮背景颜色为淡青色 */
+  border: none;             /* 去掉按钮的边框 */
+  color: black;           /* 设置按钮上的文本颜色为黑色*/
+  padding: 10px;            /* 在按钮内部添加10px的填充 */
+  text-align: center;       /* 使按钮上的文本居中对齐 */
+  text-decoration: none;    /* 去掉按钮上的文本装饰（例如下划线） */
+  display: inline-block;    /* 将按钮设置为内联块级元素，使其可以和其他元素并排显示 */
+  font-size: 14px;          /* 设置按钮上的文本字体大小为14px */
+  cursor: pointer;          /* 将鼠标悬停在按钮上时的光标形状设置为指针 */
+  border-radius: 50%;       /* 设置按钮的边框半径为50%，使其呈圆形 */
+  width: 40px;              /* 设置按钮的宽度为40px */
+  height: 40px;             /* 设置按钮的高度为40px */
+  line-height: 20px;        /* 设置按钮上的文本行高为20px，使其垂直居中 */
+}
+
+
+
+
 time {
   display: block;
   color: $color-subtext;
@@ -100,8 +143,8 @@ a {
 }
 
 *:focus {
-  background: #ffe8bc !important;
-  color: black !important;
+  background: #ffe8bc;;
+  color: black;
 }
 
 nav {
@@ -113,11 +156,11 @@ nav {
   grid-gap: 2em;
   grid-template-areas:
     "content"
-    "side";
+    "aside";
 
   @media (min-width: 700px) {
     grid-template-columns: 3fr 1fr;
-    grid-template-areas: "content side";
+    grid-template-areas: "content aside";
   }
 }
 
