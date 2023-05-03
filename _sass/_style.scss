@@ -40,6 +40,7 @@ body {
   z-index: 100;
   border-radius: 10px; /* 设置目录栏的边框半径为10px，使其呈现更大的圆角 */
   display: none;            //一开始隐藏链接栏
+  
 }
 
 
@@ -48,7 +49,7 @@ body {
   position: fixed;          /* 将按钮固定在视口中的一个位置，即使页面滚动也不会改变 */
   top: 8%;                /* 距离视口顶部的距离为20px */
   right: 25%;              /* 距离视口右侧的距离为20% */
-  background-color: #B2DFDB !important;/* 设置按钮背景颜色为淡青色 */
+  background-color: #d1c8c8 !important;/* 设置按钮背景颜色为淡青色 */
   border: none;             /* 去掉按钮的边框 */
   color: black;           /* 设置按钮上的文本颜色为黑色*/
   padding: 10px;            /* 在按钮内部添加10px的填充 */
