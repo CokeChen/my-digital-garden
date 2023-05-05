@@ -40,7 +40,7 @@ body {
   z-index: 100;
   border-radius: 10px; /* 设置目录栏的边框半径为10px，使其呈现更大的圆角 */
   display: none;            //一开始隐藏链接栏
-  
+
 }
 
 
@@ -62,6 +62,10 @@ body {
   width: 40px;              /* 设置按钮的宽度为40px */
   height: 40px;             /* 设置按钮的高度为40px */
   line-height: 20px;        /* 设置按钮上的文本行高为20px，使其垂直居中 */
+
+  @media (max-width: 767px) {
+    display: none;          //手机端不显示按钮
+  }
 }
 
 
@@ -169,13 +173,9 @@ nav {
   display: grid;
   grid-gap: 2em;
   grid-template-areas:
-    "content"
-    "side";
-
-  @media (min-width: 700px) {
-    grid-template-columns: 5fr 4fr;
-    grid-template-areas: "content side";
-  }
+    "search-side"
+    "content";
+    
 }
 
 
@@ -276,3 +276,74 @@ cssCopy code.toc-level-h1 {
 
 
 
+
+// 搜索框的样式
+#search-input {
+  position: absolute;
+  width: 45%;
+  padding: 1.1%;          //搜索框内边距为宽度的 1.2%。
+  border: 1px solid #ccc;
+  border-radius: 50px; /* 设置圆角 */
+  font-size: 16px;
+  outline: none;          //鼠标点击搜索框时，不显示蓝色的外框线。
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);     //将搜索框向左上方移动，使其与页面的垂直和水平中心对齐。
+  box-sizing: border-box;     // 指定元素的盒模型为 border-box，即 border 和 padding 的宽度会包含在元素的宽度内。
+  max-width: 80%;
+  /* 可以根据需要设置最大宽度 */
+}
+
+// 搜索结果容器的样式
+#results-container {
+  position: absolute;
+  width: 50%;
+  max-width: 80%;
+  top: 36.1%;
+  left: 28%;
+  list-style-type: none;
+  padding: 0;
+}
+
+
+/* 当搜索框获得焦点时的样式 */
+#search-input:focus {
+  border-color: #007bff;
+}
+
+/* 搜索结果列表项样式 */
+#results-container li {
+  margin-bottom: 8px;
+}
+
+/* 搜索结果链接样式 */
+#results-container li a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* 鼠标悬停在搜索结果链接上时的样式 */
+#results-container li a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+//修改home页的welcome，使之居于搜索框之上
+.home-welcome {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+// 主页的样式
+.garden-pages {
+  position: fixed;
+  width: 20%;
+  top: 50%;
+  left: 15%;
+}

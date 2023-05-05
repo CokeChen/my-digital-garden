@@ -3,17 +3,6 @@ layout: default
 ---
 
 
-<!-- 加入文件链接 -->
-<nav id="sidebar">
-  相关笔记链接
-  <ul id="directory">
-    {% for note in site.notes %}
-    <li>
-      <a href="{{ note.url | relative_url }}">{{ note.title }}</a>
-    </li>
-    {% endfor %}
-  </ul>
-</nav>
 
 
 <article>
@@ -29,18 +18,44 @@ layout: default
   <div id="notes-entry-container">
     <content>
       {{ content }}
-      <p>道阻且长，行则将至.</p>
     </content>
 
     <!-- 加入大纲 -->
     <aside>
       <ul id="toc"></ul>
-    </aside>
-    
+    </aside>   
+  </div>
+<!-- 加入文件链接 -->
+<nav id="sidebar">
+  相关笔记链接
+  {% assign current_path = page.path | split: '/' %}
+  {% assign parent_folder = current_path[-2] %}       <!--获取使用改模板文件的上一级路径-->
+  
+  {% assign sorted_notes = site.notes | sort_natural: 'title' %} <!-- 对文件名进行自然排序 -->
+  
+  <ul id="directory">
+    <!-- 将文件名与父文件夹名称相同的文件放在第一个位置 -->
+    {% for note in sorted_notes %}
+      {% assign note_path = note.path | split: '/' %}
+      {% if note_path[-2] == parent_folder and note_path[-1] != current_path[-1] and note.title == parent_folder %}
+        <li>
+          <a href="{{ note.url | relative_url }}">{{ note.title }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+    {% for note in sorted_notes %}
+      {% assign note_path = note.path | split: '/' %}
+      {% if note_path[-2] == parent_folder and note_path[-1] != current_path[-1] and note.title != parent_folder %}
+          <li>
+            <a href="{{ note.url | relative_url }}">{{ note.title }}</a>
+          </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
 
 <!-- 添加按钮   -->
 <button id="toggle-sidebar-button" class="toggle-sidebar-button">🙈</button>
-
 
 <!-- 原本的页面侧边栏，显示该笔记与其他笔记的链接情况 -->
     <!-- <side style="font-size: 0.9em">
@@ -78,5 +93,5 @@ layout: default
 <script src="{{ '/assets/js/toc.js' | relative_url }}"></script>
 
 <!-- 引入文件的js文件 -->
-<script src="{{ '/assets/js/file.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/files.js' | relative_url }}"></script>
 

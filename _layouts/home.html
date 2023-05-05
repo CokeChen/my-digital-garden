@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<div id="pages-entry-container">
+
+<content>
+  {{ content }}
+</content>
+
+<!-- 添加搜索框 -->
+<script src="/assets/js/simple-jekyll-search.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('results-container'),
+      json: '/search.json',
+      searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+      noResultsText: '没有找到相关结果',
+      limit: 10,
+      fuzzy: false,
+      exclude: []
+    });
+  });
+</script>
+
+</div>
+
+  <!-- 加入导图 -->
+  <!-- <side>
+    {% include notes_graph.html %} 
+  </side> -->

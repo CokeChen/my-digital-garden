@@ -3,12 +3,48 @@ layout: default
 ---
 
 <div id="pages-entry-container">
+
   <content>
     {{ content }}
-    <p>道阻且长，行则将至.</p>
   </content>
 
   <!-- 加入导图 -->
-  <side>
+  <!-- <side>
     {% include notes_graph.html %} 
-  </side>
+  </side> -->
+
+<!-- 添加搜索框 -->
+<script src="/assets/js/simple-jekyll-search.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a><br/><span>{snippet}</span></li>',
+    noResultsText: '没有找到相关结果',
+    limit: 10,
+    fuzzy: false,
+    exclude: [],
+    onComplete: function (results) {
+      const searchInput = document.getElementById('search-input');
+      const searchTerm = searchInput.value.trim().toLowerCase();
+
+      results.forEach(result => {
+        const contentLower = result.content.toLowerCase();
+        const index = contentLower.indexOf(searchTerm);
+
+        if (index !== -1) {
+          const start = Math.max(0, index - 20);
+          const end = Math.min(result.content.length, index + searchTerm.length + 20);
+          result.snippet = '...' + result.content.substring(start, end) + '...';
+        } else {
+          result.snippet = '';
+        }
+      });
+    }
+  });
+  });
+</script>
+
+</div>
