@@ -3,8 +3,6 @@ layout: default
 ---
 
 
-
-
 <article>
   <!-- 显示文章的标题和最后修改时间  -->
   <div> 
@@ -19,7 +17,6 @@ layout: default
     <content>
       {{ content }}
     </content>
-
     <!-- 加入大纲 -->
     <aside>
       <ul id="toc"></ul>
@@ -54,33 +51,7 @@ layout: default
   </ul>
 </nav>
 
-<!-- 添加按钮   -->
-<button id="toggle-sidebar-button" class="toggle-sidebar-button">🙈</button>
-
-<!-- 原本的页面侧边栏，显示该笔记与其他笔记的链接情况 -->
-    <!-- <side style="font-size: 0.9em">
-      <h3 style="margin-bottom: 1em">Notes mentioning this note</h3>
-      {% if page.backlinks.size > 0 %}
-      <div style="display: grid; grid-gap: 1em; grid-template-columns: repeat(1fr);">
-      {% for backlink in page.backlinks %}
-        <div class="backlink-box">
-        <a class="internal-link" href="{{ site.baseurl }}{{ backlink.url }}{%- if site.use_html_extension -%}.html{%- endif -%}">{{ backlink.title }}</a><br>
-        <div style="font-size: 0.9em">{{ backlink.excerpt | strip_html | truncatewords: 20 }}</div>
-        </div>
-      {% endfor %}
-      </div>
-      {% else %}
-
-      <div style="font-size: 0.9em">
-        <p>
-          There are no notes linking to this note.
-        </p>
-      </div>
-      {% endif %}
-    </side> -->
-
-
-  </div>
+</div>
 </article>
 
 <hr>
@@ -92,6 +63,5 @@ layout: default
 <!-- 引用大纲的js文件 -->
 <script src="{{ '/assets/js/toc.js' | relative_url }}"></script>
 
-<!-- 引入文件的js文件 -->
-<script src="{{ '/assets/js/files.js' | relative_url }}"></script>
+
 

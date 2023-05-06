@@ -2,13 +2,13 @@
 layout: default
 ---
 
-<div id="pages-entry-container">
 
 <content>
   {{ content }}
 </content>
 
 <!-- 添加搜索框 -->
+{% include search.html %}
 <script src="/assets/js/simple-jekyll-search.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -25,7 +25,28 @@ layout: default
   });
 </script>
 
-</div>
+<!-- 加入文件链接 -->
+<nav id="sidebar_home">
+<h3>花园专栏</h3>
+<ul>
+<li><a href="your-link-here">高等数学</a></li>
+<li><a href="your-link-here">线性代数</a></li>
+<li><a href="your-link-here">概率论</a></li>
+<li><a href="your-link-here">信号与系统</a></li>
+<li><a href="your-link-here">数字电路</a></li>
+<li><a href="{{ site.baseurl }}/数学/">数学</a></li>
+</ul>
+<h3>快速链接</h3>
+<ul>
+<li><a href="your-link-here">数学必背知识点</a></li>
+<li><a href="your-link-here">信号必背知识点</a></li>
+</ul>
+<h3>花园指南</h3>
+<ul>
+<li><a href="your-link-here">花园指南</a></li>
+</ul>
+</nav>
+
 
   <!-- 加入导图 -->
   <!-- <side>

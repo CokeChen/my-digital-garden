@@ -22,19 +22,21 @@ permalink: /
 
 <!-- 其他导航链接 -->
 
-<div class="garden-pages">
-<h3>花园专栏</h3>
-<a href="{{ site.baseurl }}/数学/">数学</a>
-<br>
-<a href="{{ site.baseurl }}/信号与系统/">信号与系统</a>
-<br>
-<a href="{{ site.baseurl }}/数字电路/">数字电路</a>
+<!-- <div class="garden-column">
+  <strong>花园专栏</strong>
+  <a href="{{ site.baseurl }}/数学/">数学</a>
+  <a href="{{ site.baseurl }}/信号与系统/">信号与系统</a>
+  <a href="{{ site.baseurl }}/数字电路/">数字电路</a>
 </div>
 
+<div class="quick-link">
+  <strong>快速链接</strong>：
+  <a href="{{ site.baseurl }}/整理要背下来的东西/">数学必背知识点</a>
+  <a href="{{ site.baseurl }}/整理要背下来的东西/">信号必背知识点</a>
+</div>
+ -->
 
 
-
-{% include search.html %}
 
 <!-- <strong>Recently updated notes</strong>
 

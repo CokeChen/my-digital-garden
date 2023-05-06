@@ -275,12 +275,12 @@ cssCopy code.toc-level-h1 {
 
 
 
-
+/*----------------------home-scss-----------------------*/
 
 // 搜索框的样式
 #search-input {
   position: absolute;
-  width: 45%;
+  width: 48%;
   padding: 1.1%;          //搜索框内边距为宽度的 1.2%。
   border: 1px solid #ccc;
   border-radius: 50px; /* 设置圆角 */
@@ -292,17 +292,26 @@ cssCopy code.toc-level-h1 {
   box-sizing: border-box;     // 指定元素的盒模型为 border-box，即 border 和 padding 的宽度会包含在元素的宽度内。
   max-width: 80%;
   /* 可以根据需要设置最大宽度 */
+
+  @media (max-width: 768px) {
+    width: 60%;
+    padding: 2%;
+  }
 }
 
 // 搜索结果容器的样式
 #results-container {
   position: absolute;
-  width: 50%;
+  width: 60%;
   max-width: 80%;
-  top: 36.1%;
-  left: 28%;
+  top: 36.2%;
+  left: 26.5%;
   list-style-type: none;
   padding: 0;
+
+  @media (max-width: 768px) {
+    width: 70%;
+  }
 }
 
 
@@ -340,10 +349,38 @@ cssCopy code.toc-level-h1 {
   font-weight: bold;
 }
 
-// 主页的样式
-.garden-pages {
+
+.garden-column{
   position: fixed;
-  width: 20%;
-  top: 50%;
-  left: 15%;
+  width: 50%;
+  top: 70%;
+  left: 30%;
 }
+.quick-link{
+  position: fixed;
+  width: 50%;
+  top: 50%;
+  left: 30%;
+}
+
+// 主页文件链接栏的样式
+#sidebar_home {
+  width: 20%;
+  min-width: 200px;
+  padding: 1em;
+  border-right: 1px solid #ccc;
+  position: fixed;
+  top: 0;
+  right: 1%;
+  bottom: 1%;
+  height: 90%;
+  overflow-y: auto;
+  background-color: #f0f0f0; /* 更改背景颜色以增加亮度 */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  border-radius: 10px; /* 设置目录栏的边框半径为10px，使其呈现更大的圆角 */
+  display: none;            //一开始隐藏链接栏
+
+}
+
+/*----------------------end-home-scss-----------------------*/

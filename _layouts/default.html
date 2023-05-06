@@ -9,14 +9,15 @@
       <main>{{ content }}</main>                  <!--占位符，后续如果有文件以它布局，则嵌入到其中-->
       <footer>{% include footer.html %}</footer>
     </div>
-
+    <!-- 添加按钮   -->
+    <button id="toggle-sidebar-button" class="toggle-sidebar-button">🙈</button>
     {% include link-previews.html wrapperQuerySelector="content" %}
     {% include mermaid_converter.html %}  <!--将```mermaid转为<div>形式的html-->
 
-
+    <!-- 引入文件的js文件 -->
+    <script src="{{ '/assets/js/sidebar-links.js' | relative_url }}"></script>  
+ 
   </body>
 </html>
 
 
-
- 
