@@ -7,6 +7,11 @@ layout: default
   {{ content }}
 </content>
 
+
+<div class="home-welcome">
+  <h2>Welcome! 🌱</h2>
+</div>
+
 <!-- 添加搜索框 -->
 {% include search.html %}
 <script src="/assets/js/simple-jekyll-search.min.js"></script>
@@ -20,35 +25,21 @@ layout: default
       noResultsText: '没有找到相关结果',
       limit: 10,
       fuzzy: false,
-      exclude: []
+      exclude: [],
+      sortMiddleware: function(a, b) {
+        const searchTerm = document.getElementById('search-input').value;
+        const titleMatchA = a.title.toLowerCase().includes(searchTerm.toLowerCase());
+        const titleMatchB = b.title.toLowerCase().includes(searchTerm.toLowerCase());
+        
+        if (titleMatchA && !titleMatchB) {
+          return -1;
+        } else if (!titleMatchA && titleMatchB) {
+          return 1;
+        } else {
+          return 0;
+        }
+      }
     });
   });
 </script>
 
-<!-- 加入文件链接 -->
-<nav id="sidebar_home">
-<h3>花园专栏</h3>
-<ul>
-<li><a href="your-link-here">高等数学</a></li>
-<li><a href="your-link-here">线性代数</a></li>
-<li><a href="your-link-here">概率论</a></li>
-<li><a href="your-link-here">信号与系统</a></li>
-<li><a href="your-link-here">数字电路</a></li>
-<li><a href="{{ site.baseurl }}/数学/">数学</a></li>
-</ul>
-<h3>快速链接</h3>
-<ul>
-<li><a href="your-link-here">数学必背知识点</a></li>
-<li><a href="your-link-here">信号必背知识点</a></li>
-</ul>
-<h3>花园指南</h3>
-<ul>
-<li><a href="your-link-here">花园指南</a></li>
-</ul>
-</nav>
-
-
-  <!-- 加入导图 -->
-  <!-- <side>
-    {% include notes_graph.html %} 
-  </side> -->

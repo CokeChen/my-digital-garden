@@ -47,7 +47,7 @@ body {
 // 控制侧边栏的按钮
 .toggle-sidebar-button {
   position: fixed;          /* 将按钮固定在视口中的一个位置，即使页面滚动也不会改变 */
-  top: 8%;                /* 距离视口顶部的距离为20px */
+  top: 6%;                /* 距离视口顶部的距离为20px */
   right: 25%;              /* 距离视口右侧的距离为20% */
   background-color: #d1c8c8 !important;/* 设置按钮背景颜色为淡青色 */
   border: none;             /* 去掉按钮的边框 */
@@ -286,7 +286,7 @@ cssCopy code.toc-level-h1 {
   border-radius: 50px; /* 设置圆角 */
   font-size: 16px;
   outline: none;          //鼠标点击搜索框时，不显示蓝色的外框线。
-  top: 35%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);     //将搜索框向左上方移动，使其与页面的垂直和水平中心对齐。
   box-sizing: border-box;     // 指定元素的盒模型为 border-box，即 border 和 padding 的宽度会包含在元素的宽度内。
@@ -304,7 +304,7 @@ cssCopy code.toc-level-h1 {
   position: absolute;
   width: 60%;
   max-width: 80%;
-  top: 36.2%;
+  top: 41.2%;
   left: 26.5%;
   list-style-type: none;
   padding: 0;
@@ -338,11 +338,10 @@ cssCopy code.toc-level-h1 {
 
 
 
-
 //修改home页的welcome，使之居于搜索框之上
 .home-welcome {
   position: absolute;
-  top: 15%;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
   font-size: 24px;
