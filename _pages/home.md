@@ -14,8 +14,8 @@ permalink: /
 <h3>花园专栏</h3>
 <ul>
 <li><a href="{{ site.baseurl }}/高等数学/">高等数学</a></li>
-<li><a href="your-link-here">线性代数</a></li>
-<li><a href="your-link-here">概率论</a></li>
+<li><a href="{{ site.baseurl }}/线性代数/">线性代数</a></li>
+<li><a href="{{ site.baseurl }}/概率论/">概率论</a></li>
 <li><a href="your-link-here">信号与系统</a></li>
 <li><a href="your-link-here">数字电路</a></li>
 
